@@ -12,6 +12,11 @@ import { filterImageFromURL, deleteLocalFiles } from "./util/util";
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
+  // Root URI call
+  app.get("/", async (req, res) => {
+    res.send("Looks good");
+  });
+
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   app.get("/filteredimage", async (req: Request, res: Response) => {
     let { image_url } = req.query;
